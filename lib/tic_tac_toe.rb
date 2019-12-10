@@ -42,7 +42,7 @@ class TicTacToe
       false
     end
   end
-    def turn
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
     if valid_move?(input)
@@ -69,7 +69,7 @@ class TicTacToe
   def turn_count
     @board.count{|token| token == "X" || token == "O"}
   end
-   def won?
+  def won?
 
     board_empty = @board.none? { |i| i == "X" || i = "O"}
     if board_empty
