@@ -25,7 +25,23 @@ class TicTacToe
   def move(location, character = "X")
     @board[location.to_i - 1] = character
   end
-    
+  
+  def position_taken?(position)
+    if @board[position] == "X" || @board[position] == "O"
+      true
+    else
+      false
+    end
+  end
+  def valid_move?(position)
+    position = position.to_i - 1 
+    if position.between?(0,8) && !position_taken?(position)
+      true
+    else
+      false
+    end
+  end
+  
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
